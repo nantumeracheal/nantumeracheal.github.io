@@ -1,0 +1,638 @@
+/* ==========================================================================
+   1. BRAND IDENTITY DESIGN TOKENS (Mango Orange Palette)
+   ========================================================================== */
+:root {
+    --primary-mango: #FF9F1C;       /* Vibrant tropical accent for CTAs & states */
+    --deep-citrus: #E07A00;         /* Deep pulp contrast for typography & headers */
+    --dark-bark: #aa5902;           /* Rich organic shadow tone for deep footers */
+    --sunshine-mist: #FFFBF7;       /* Warm, welcoming background tint */
+    --whatsapp-green: #25D366;      /* Global native green for instant action */
+    --whatsapp-hover: #20BA5A;
+    --text-dark: #333333;           /* Primary reading text */
+    --text-muted: #666666;          /* Secondary descriptive body text */
+    --pure-white: #ffffff;
+}
+
+/* ==========================================================================
+   2. RESET & GLOBAL ELEMENT STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--sunshine-mist);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. HEADER & INTEGRATED NAVIGATION SYSTEM
+   ========================================================================== */
+.main-header {
+    background-color: var(--pure-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--deep-citrus);
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+
+}
+
+.logo-text {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-menu ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #444444;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover, 
+.nav-menu ul li a.active {
+    color: var(--primary-mango);
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--primary-mango);
+    color: var(--pure-white);
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cta:hover {
+    background-color: var(--deep-citrus);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   4. LAYOUT COMPONENTS & STRUCTURAL HEROES
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    background-image: url('images/backgroundimage.png'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    color: var(--pure-white);
+}
+
+/* Debugged Layout Rule: Applies globally to internal page header layouts */
+.page-hero {
+    position: relative;
+    background-image: url('images/backgroundimage.png'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    color: var(--pure-white);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(58, 30, 0, 0.85) 20%, rgba(255, 159, 28, 0.2) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-mango);
+    color: var(--pure-white);
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--deep-citrus);
+    transform: translateY(-1px);
+}
+
+.section-padding {
+    padding: 70px 0;
+}
+
+.bg-light {
+    background-color: var(--sunshine-mist);
+}
+
+/* Typography Headings */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dark-bark);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-center-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark-bark);
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 650px;
+    margin: 0 auto 45px auto;
+    font-size: 1.1rem;
+}
+
+.grid-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE PRODUCT CARDS GRID
+   ========================================================================== */
+.products-section {
+    padding: 60px 0;
+    background-color: var(--pure-white);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--pure-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(224, 122, 0, 0.12);
+}
+
+.product-card-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-details {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-badge {
+    align-self: flex-start;
+    background-color: #FFECD6;
+    color: var(--deep-citrus);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-title {
+    font-size: 1.4rem;
+    color: var(--dark-bark);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.product-description {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.view-more-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--primary-mango);
+    color: var(--pure-white);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-top: auto;
+    transition: background-color 0.2s ease;
+}
+
+.view-more-btn:hover {
+    background-color: var(--deep-citrus);
+}
+
+/* ==========================================================================
+   6. INNER PAGE COMPONENT SPECIFICS (About, Process, Impact)
+   ========================================================================== */
+.value-card {
+    background: var(--pure-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border-left: 4px solid var(--primary-mango);
+}
+
+/* Step Progression Items (Process Page) */
+.process-timeline {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.process-step {
+    display: flex;
+    gap: 20px;
+    background: var(--pure-white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    align-items: flex-start;
+}
+
+.step-number {
+    background-color: var(--primary-mango);
+    color: var(--pure-white);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+
+
+
+
+/* ==========================================================================
+   7. NATIVE ORDER FORM ENGINE (Contact Page)
+   ========================================================================== */
+.whatsapp-native-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: var(--pure-white);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #FFECD6;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444444;
+}
+
+.form-group input, 
+.form-group select {
+    padding: 12px;
+    border: 1px solid #DCDCDC;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    background-color: #FAFAFA;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: var(--primary-mango);
+    background-color: var(--pure-white);
+}
+
+.form-submit-btn {
+    background-color: var(--whatsapp-green);
+    color: var(--pure-white);
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 5px;
+}
+
+.form-submit-btn:hover {
+    background-color: var(--whatsapp-hover);
+}
+
+.form-submit-btn:active {
+    transform: scale(0.99);
+}
+
+/* Integrated SVGs (Contact Info block rules) */
+.orange-svg-icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-mango);
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* ==========================================================================
+   8. COMPACT UNIFIED BRAND FOOTER
+   ========================================================================== */
+.main-footer-compact {
+    background-color: var(--dark-bark);
+    color: var(--pure-white);
+    padding: 50px 0 25px 0;
+    font-size: 0.95rem;
+    border-top: 5px solid var(--primary-mango);
+}
+
+.footer-grid-compact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-brand-compact p {
+    margin-top: 10px;
+    color: #FFECD6;
+    max-width: 480px;
+    line-height: 1.6;
+}
+
+.footer-socials-compact {
+    text-align: right;
+}
+
+.social-icons-compact {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+}
+
+.social-btn-compact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: var(--pure-white);
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.social-btn-compact:hover {
+    transform: translateY(-3px);
+}
+
+.social-btn-compact.whatsapp { background-color: var(--whatsapp-green); }
+.social-btn-compact.whatsapp:hover { background-color: var(--whatsapp-hover); }
+
+.copyright-text-compact {
+    color: #C4A687;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   9. MEDIA QUERIES & RESPONSIVES BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-flex {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .nav-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .nav-menu ul li {
+        margin: 0 10px;
+    }
+    
+    .grid-two-col {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .product-grid,
+    .metrics-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .footer-grid-compact {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-brand-compact .logo {
+        justify-content: center;
+    }
+    
+    .footer-socials-compact {
+        text-align: center;
+    }
+    
+    .social-icons-compact {
+        justify-content: center;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+/* --- HOME PAGE HERO --- */
+.hero-section {
+    position: relative;
+    /* 1. Point to your local image file */
+    background-image: url('images/home.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* 2. Ensures image stretches nicely without distorting */
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    color: var(--pure-white);
+}
+
+/* --- INNER PAGES HERO (About, Process, Impacts, etc.) --- */
+.about-hero {
+    position: relative;
+    /* 3. Point to an inner page hero image */
+    background-image: url('images/about.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    color: var(--pure-white);
+}
+.process-hero {
+    position: relative;
+    /* 3. Point to an inner page hero image */
+    background-image: url('images/process.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    color: var(--pure-white);
+}
+.products-hero {
+    position: relative;
+    /* 3. Point to an inner page hero image */
+    background-image: url('images/home.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    color: var(--pure-white);
+}
+
+
+.contact-hero {
+    position: relative;
+    /* 3. Point to an inner page hero image */
+    background-image: url('images/contact.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    color: var(--pure-white);
+}
